@@ -1,0 +1,2359 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dlissz Store — Toko Item & Jasa Joki Roblox Terpercaya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --bg-main: #060913;
+      --bg-card: #0e1326;
+      --bg-surface: #151c36;
+      --border-main: #232d52;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-main);
+      color: #f1f5f9;
+      background-image:
+        radial-gradient(circle at 12% 10%, rgba(99, 102, 241, 0.16) 0%, transparent 40%),
+        radial-gradient(circle at 88% 20%, rgba(6, 182, 212, 0.14) 0%, transparent 42%),
+        radial-gradient(circle at 50% 95%, rgba(168, 85, 247, 0.12) 0%, transparent 45%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .font-display {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .glass-nav {
+      background: rgba(10, 14, 30, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .neon-glow {
+      box-shadow: 0 0 28px rgba(99, 102, 241, 0.25), inset 0 0 14px rgba(6, 182, 212, 0.12);
+    }
+
+    .game-card-active {
+      border-color: #22d3ee !important;
+      background: linear-gradient(145deg, rgba(22, 32, 68, 0.96), rgba(13, 19, 40, 0.98)) !important;
+      box-shadow: 0 0 22px rgba(34, 211, 238, 0.28);
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-cyan-500 selection:text-slate-950">
+
+  <!-- ==================== TOAST NOTIFICATION ==================== -->
+  <div id="toast-container" class="fixed top-20 right-4 z-[100] flex flex-col gap-2 max-w-sm w-full pointer-events-none px-4 sm:px-0"></div>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-[#232d52]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
+      <!-- Logo Dlissz Store -->
+      <a href="#beranda" class="flex items-center gap-3 shrink-0 group">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-600 to-cyan-500 flex items-center justify-center shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform">
+          <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="20" height="12" rx="4"></rect>
+            <path d="M7 10v4"></path>
+            <path d="M5 12h4"></path>
+            <circle cx="15.5" cy="10.8" r="1.1" fill="currentColor"></circle>
+            <circle cx="18.2" cy="13.2" r="1.1" fill="currentColor"></circle>
+          </svg>
+        </div>
+        <div>
+          <span class="font-display font-extrabold text-base sm:text-xl tracking-wider bg-gradient-to-r from-white via-cyan-200 to-indigo-400 bg-clip-text text-transparent block leading-tight">
+            DLISSZ STORE
+          </span>
+          <span class="text-[11px] text-slate-400 hidden sm:block">Joki &amp; Item Roblox Terpercaya</span>
+        </div>
+      </a>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-300">
+        <a href="#beranda" class="hover:text-cyan-400 transition-colors">Beranda</a>
+        <a href="#katalog" class="hover:text-cyan-400 transition-colors">Katalog &amp; Joki</a>
+        <a href="#cek-pesanan" class="hover:text-cyan-400 transition-colors">Cek Status Pesanan</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="#cek-pesanan" class="inline-flex items-center gap-1.5 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-[#151c36] hover:bg-indigo-600/25 border border-[#232d52] hover:border-cyan-400/60 text-xs sm:text-sm font-bold text-white transition-all">
+          <svg class="w-4 h-4 text-cyan-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"></path>
+            <rect x="9" y="3" width="6" height="4" rx="1"></rect>
+            <path d="M9 12h6"></path>
+            <path d="M9 16h4"></path>
+          </svg>
+          <span>Cek Pesanan</span>
+          <span id="header-order-badge" class="hidden px-1.5 py-0.5 text-[10px] font-extrabold rounded-full bg-cyan-500 text-slate-950">0</span>
+        </a>
+
+        <button type="button" onclick="openAdminChat()" class="inline-flex items-center gap-1.5 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-xs sm:text-sm font-bold text-white shadow-md shadow-indigo-600/25 transition-all">
+          <span class="w-2 h-2 rounded-full bg-emerald-300 animate-pulse"></span>
+          <span>Chat Admin</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="beranda" class="pt-6 pb-8 sm:pt-10 sm:pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative rounded-3xl overflow-hidden border border-[#232d52] bg-gradient-to-br from-[#121836] via-[#0d1227] to-[#1a1036] p-6 sm:p-10 neon-glow">
+        <div class="absolute -top-24 -right-24 w-72 h-72 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-purple-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-4 sm:space-y-5">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-semibold">
+              <svg class="w-3.5 h-3.5 text-amber-400 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+              </svg>
+              <span>Proses Kilat • 100% Aman &amp; Anti-Hack • QRIS Otomatis</span>
+            </div>
+
+            <h1 class="font-display text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white">
+              Toko Akun, Item &amp; Joki Roblox di
+              <span class="bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">Dlissz Store</span>
+            </h1>
+
+            <p class="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
+              Layanan lengkap untuk <strong>Blox Fruits</strong> (Akun, Fruit, Joki, Joki Race V4, Joki Level, Joki Coin/Beli &amp; Fragment), <strong>Fisch</strong>, <strong>Fish It</strong>, dan map Roblox populer lainnya.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3 pt-1">
+              <a href="#katalog" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white font-bold text-sm shadow-lg shadow-indigo-600/30 transition-all">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span>Mulai Order Sekarang</span>
+              </a>
+              <button type="button" onclick="openAdminChat()" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#151c36] hover:bg-[#1c2547] border border-[#232d52] text-slate-200 font-semibold text-sm transition-all">
+                <svg class="w-4 h-4 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Tanya Admin</span>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/10 max-w-lg">
+              <div>
+                <p class="font-display text-lg sm:text-2xl font-extrabold text-cyan-400">5.400+</p>
+                <p class="text-xs text-slate-400">Order Sukses</p>
+              </div>
+              <div>
+                <p class="font-display text-lg sm:text-2xl font-extrabold text-purple-400">10-30 Mnt</p>
+                <p class="text-xs text-slate-400">Estimasi Proses</p>
+              </div>
+              <div>
+                <p class="font-display text-lg sm:text-2xl font-extrabold text-emerald-400">100%</p>
+                <p class="text-xs text-slate-400">Garansi Aman</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shortcut Game Cards di Hero -->
+          <div class="lg:col-span-5 grid grid-cols-2 gap-3.5">
+            <button type="button" onclick="selectGame('bloxfruits', true)" class="text-left p-4 rounded-2xl bg-[#0e1326]/95 border border-orange-500/40 hover:border-cyan-400 transition-all">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center mb-2.5 shadow-lg shadow-orange-500/20">
+                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+                </svg>
+              </div>
+              <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-red-500/20 text-red-300">Terlaris</span>
+              <h3 class="font-bold text-white mt-1.5 text-sm sm:text-base">Blox Fruits</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Akun, Fruit, Race V4, Level &amp; Coin</p>
+            </button>
+
+            <button type="button" onclick="selectGame('fisch', true)" class="text-left p-4 rounded-2xl bg-[#0e1326]/95 border border-cyan-500/35 hover:border-cyan-400 transition-all">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-2.5 shadow-lg shadow-cyan-500/20">
+                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6.5 12c.94-3.46 4.94-6 8.9-6 3.96 0 6.6 2.54 6.6 6s-2.64 6-6.6 6c-3.96 0-7.96-2.54-8.9-6Z"></path>
+                  <path d="M6.5 12 2 8v8l4.5-4Z"></path>
+                  <circle cx="16.5" cy="10.5" r="1" fill="currentColor"></circle>
+                </svg>
+              </div>
+              <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300">Trending</span>
+              <h3 class="font-bold text-white mt-1.5 text-sm sm:text-base">Fisch</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Joki C$, Rod Mythic &amp; Leveling</p>
+            </button>
+
+            <button type="button" onclick="selectGame('fishit', true)" class="text-left p-4 rounded-2xl bg-[#0e1326]/95 border border-emerald-500/35 hover:border-emerald-400 transition-all">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-2.5 shadow-lg shadow-emerald-500/20">
+                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="5" r="3"></circle>
+                  <path d="M12 22V8"></path>
+                  <path d="M5 12H2a10 10 0 0 0 20 0h-3"></path>
+                </svg>
+              </div>
+              <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Populer</span>
+              <h3 class="font-bold text-white mt-1.5 text-sm sm:text-base">Fish It</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Joki Coin, Ikan Langka &amp; Akun</p>
+            </button>
+
+            <button type="button" onclick="selectGame('lainnya', true)" class="text-left p-4 rounded-2xl bg-[#0e1326]/95 border border-purple-500/35 hover:border-purple-400 transition-all">
+              <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center mb-2.5 shadow-lg shadow-purple-500/20">
+                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                  <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                  <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                  <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                </svg>
+              </div>
+              <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">Multi-Map</span>
+              <h3 class="font-bold text-white mt-1.5 text-sm sm:text-base">Map Lainnya</h3>
+              <p class="text-xs text-slate-400 mt-0.5">Anime Vanguards, Pet Sim 99, dll</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== KATALOG GAME & KATEGORI LENGKAP ==================== -->
+  <section id="katalog" class="py-6 sm:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+      <!-- LANGKAH 1: PILIH GAME -->
+      <div>
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-5">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-cyan-400">Langkah 1</span>
+            <h2 class="font-display text-xl sm:text-3xl font-extrabold text-white mt-0.5">Pilih Game / Map Roblox</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400">Pilih game untuk menampilkan sub-menu kategori &amp; harga</p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
+          <!-- Blox Fruits -->
+          <button type="button" onclick="selectGame('bloxfruits')" id="game-card-bloxfruits" class="game-card game-card-active text-left p-4 sm:p-5 rounded-2xl bg-[#0e1326] border-2 border-[#232d52] hover:border-cyan-400/70 transition-all relative overflow-hidden">
+            <span class="absolute top-3 right-3 px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-gradient-to-r from-orange-500 to-red-600 text-white">HOT</span>
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 via-red-500 to-amber-500 flex items-center justify-center mb-3 shadow-lg shadow-orange-500/25">
+              <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-base sm:text-lg text-white">Blox Fruits</h3>
+            <p class="text-xs text-slate-400 mt-1">Akun, Fruit, Joki, Joki Race, Joki Level &amp; Joki Coin</p>
+          </button>
+
+          <!-- Fisch -->
+          <button type="button" onclick="selectGame('fisch')" id="game-card-fisch" class="game-card text-left p-4 sm:p-5 rounded-2xl bg-[#0e1326] border-2 border-[#232d52] hover:border-cyan-400/70 transition-all relative overflow-hidden">
+            <span class="absolute top-3 right-3 px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-cyan-500/20 border border-cyan-400/40 text-cyan-300">POPULER</span>
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 flex items-center justify-center mb-3 shadow-lg shadow-cyan-500/25">
+              <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6.5 12c.94-3.46 4.94-6 8.9-6 3.96 0 6.6 2.54 6.6 6s-2.64 6-6.6 6c-3.96 0-7.96-2.54-8.9-6Z"></path>
+                <path d="M6.5 12 2 8v8l4.5-4Z"></path>
+                <circle cx="16.5" cy="10.5" r="1" fill="currentColor"></circle>
+              </svg>
+            </div>
+            <h3 class="font-bold text-base sm:text-lg text-white">Fisch</h3>
+            <p class="text-xs text-slate-400 mt-1">Joki C$ (Coin), Enchant Relic, Rod &amp; Joki Level</p>
+          </button>
+
+          <!-- Fish It -->
+          <button type="button" onclick="selectGame('fishit')" id="game-card-fishit" class="game-card text-left p-4 sm:p-5 rounded-2xl bg-[#0e1326] border-2 border-[#232d52] hover:border-cyan-400/70 transition-all relative overflow-hidden">
+            <span class="absolute top-3 right-3 px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-emerald-500/20 border border-emerald-400/40 text-emerald-300">TRENDING</span>
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 flex items-center justify-center mb-3 shadow-lg shadow-emerald-500/25">
+              <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="5" r="3"></circle>
+                <path d="M12 22V8"></path>
+                <path d="M5 12H2a10 10 0 0 0 20 0h-3"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-base sm:text-lg text-white">Fish It</h3>
+            <p class="text-xs text-slate-400 mt-1">Joki Coin, Ikan Langka/Mythic, Pancingan &amp; Akun</p>
+          </button>
+
+          <!-- Map Lainnya -->
+          <button type="button" onclick="selectGame('lainnya')" id="game-card-lainnya" class="game-card text-left p-4 sm:p-5 rounded-2xl bg-[#0e1326] border-2 border-[#232d52] hover:border-cyan-400/70 transition-all relative overflow-hidden">
+            <span class="absolute top-3 right-3 px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-purple-500/20 border border-purple-400/40 text-purple-300">MULTI-MAP</span>
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 via-fuchsia-500 to-pink-600 flex items-center justify-center mb-3 shadow-lg shadow-purple-500/25">
+              <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+              </svg>
+            </div>
+            <h3 class="font-bold text-base sm:text-lg text-white">Map Roblox Lainnya</h3>
+            <p class="text-xs text-slate-400 mt-1">Anime Vanguards, Pet Sim 99, Adopt Me &amp; Request</p>
+          </button>
+        </div>
+      </div>
+
+      <!-- LANGKAH 2: SUB-MENU KATEGORI & DAFTAR ITEM KATALOG -->
+      <div class="rounded-3xl bg-[#0e1326]/90 border border-[#232d52] p-4 sm:p-7 space-y-6 shadow-2xl">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#232d52] pb-5">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-extrabold uppercase tracking-widest text-purple-400">Langkah 2</span>
+              <span id="selected-game-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">Blox Fruits</span>
+            </div>
+            <h3 id="category-section-title" class="font-display text-lg sm:text-2xl font-extrabold text-white mt-1">
+              Katalog &amp; Menu Joki Blox Fruits
+            </h3>
+          </div>
+
+          <!-- Search Input -->
+          <div class="relative w-full md:w-72">
+            <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input
+              type="text"
+              id="product-search"
+              oninput="renderProducts()"
+              placeholder="Cari akun, fruit, race v4, level..."
+              class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#060913] border border-[#232d52] focus:border-cyan-400 focus:outline-none text-sm text-white placeholder-slate-500"
+            />
+          </div>
+        </div>
+
+        <!-- TAB SUB-MENU KATEGORI (Semua, Akun, Fruit, Joki, Joki Race, Joki Level, Joki Coin) -->
+        <div>
+          <p class="text-xs font-semibold text-slate-400 mb-2.5">Pilih Kategori Menu:</p>
+          <div id="category-tabs" class="flex flex-wrap items-center gap-2">
+            <!-- Tombol kategori awal (langsung terlihat bahkan sebelum JS re-render) -->
+            <button type="button" onclick="selectCategory('all')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-indigo-600 to-cyan-600 text-white border border-cyan-400/60 shadow-lg">
+              <span>Semua</span>
+            </button>
+            <button type="button" onclick="selectCategory('akun')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#060913] text-slate-300 border border-[#232d52]">
+              <span>Akun</span>
+            </button>
+            <button type="button" onclick="selectCategory('fruit')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#060913] text-slate-300 border border-[#232d52]">
+              <span>Fruit</span>
+            </button>
+            <button type="button" onclick="selectCategory('joki')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#060913] text-slate-300 border border-[#232d52]">
+              <span>Joki</span>
+            </button>
+            <button type="button" onclick="selectCategory('joki_race')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#060913] text-slate-300 border border-[#232d52]">
+              <span>Joki Race</span>
+            </button>
+            <button type="button" onclick="selectCategory('joki_level')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#060913] text-slate-300 border border-[#232d52]">
+              <span>Joki Level</span>
+            </button>
+            <button type="button" onclick="selectCategory('joki_coin')" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#060913] text-slate-300 border border-[#232d52]">
+              <span>Joki Coin</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- GRID KARTU PRODUK -->
+        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <!-- Dirender otomatis oleh JavaScript saat load -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CEK STATUS PESANAN ==================== -->
+  <section id="cek-pesanan" class="py-10 sm:py-14 border-t border-[#232d52]/70 bg-[#080b18]/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-7">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/15 border border-indigo-400/30 text-indigo-300 text-xs font-bold">
+          Pelacakan Status Real-Time
+        </span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-white">Cek Status Pesanan Kamu</h2>
+        <p class="text-xs sm:text-sm text-slate-400">
+          Masukkan <strong>Kode Invoice</strong> (contoh: <code class="text-cyan-400 font-mono">DLS-2026XXXX</code>) atau klik riwayat pesanan di bawah.
+        </p>
+      </div>
+
+      <form onsubmit="handleSearchOrder(event)" class="max-w-xl mx-auto flex flex-col sm:flex-row gap-2.5">
+        <input
+          type="text"
+          id="track-order-input"
+          placeholder="Masukkan Kode Invoice (DLS-2026...)"
+          class="flex-1 px-4 py-3.5 rounded-xl bg-[#0e1326] border border-[#232d52] focus:border-cyan-400 focus:outline-none text-sm font-mono uppercase text-white placeholder-slate-500"
+          required
+        />
+        <button type="submit" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold text-sm shadow-lg shadow-cyan-500/20 transition-all">
+          Lacak Pesanan
+        </button>
+      </form>
+
+      <!-- Hasil Lacak Pesanan -->
+      <div id="tracked-order-result" class="hidden rounded-3xl bg-[#0e1326] border border-cyan-500/40 p-5 sm:p-8 neon-glow"></div>
+
+      <!-- Riwayat Pesanan Lokal -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-bold text-slate-300">Riwayat Pesanan di Perangkat Ini</h3>
+          <span id="history-count-label" class="text-xs text-slate-500">0 pesanan</span>
+        </div>
+        <div id="order-history-list" class="grid grid-cols-1 md:grid-cols-2 gap-3.5"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-[#232d52] bg-[#060913] py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="font-display font-bold text-base text-white">DLISSZ STORE</span>
+        <p class="text-xs text-slate-400 mt-0.5">Merchant QRIS Resmi: Dlissz • NMID: ID1026584718773</p>
+      </div>
+      <p class="text-xs text-slate-500 text-center sm:text-right">
+        &copy; 2026 Dlissz Store Indonesia. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING CHAT ADMIN BUTTON ==================== -->
+  <button type="button" onclick="openAdminChat()" class="fixed bottom-5 right-5 z-40 flex items-center gap-2.5 px-4 py-3.5 rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 hover:scale-105 text-white font-bold text-xs sm:text-sm shadow-2xl shadow-indigo-600/40 border border-white/15 transition-transform">
+    <span class="relative flex h-3 w-3">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-400"></span>
+    </span>
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+    <span>Chat Admin</span>
+  </button>
+
+  <!-- ==================== MODAL 1: CHECKOUT & QRIS DINAMIS DLISSZ ==================== -->
+  <div id="checkout-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-5 bg-black/80 backdrop-blur-sm overflow-y-auto">
+    <div class="relative w-full max-w-4xl rounded-3xl bg-[#0e1326] border border-[#232d52] shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col">
+      <!-- Header Modal -->
+      <div class="flex items-center justify-between px-5 sm:px-7 py-4 border-b border-[#232d52] bg-[#151c36]/80">
+        <div>
+          <span id="modal-step-badge" class="text-[11px] font-bold uppercase tracking-wider text-cyan-400">Step 1 dari 2 • Data Akun Roblox</span>
+          <h3 id="modal-product-title" class="font-display text-lg sm:text-xl font-extrabold text-white">Form Pemesanan</h3>
+        </div>
+        <button type="button" onclick="closeCheckoutModal()" class="p-2 rounded-xl bg-[#060913] hover:bg-red-500/20 text-slate-400 hover:text-red-400">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Body Modal -->
+      <div class="p-5 sm:p-7 overflow-y-auto space-y-6">
+        <!-- STEP 1: FORM DATA AKUN -->
+        <form id="order-form" onsubmit="proceedToQris(event)" class="space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-gradient-to-r from-indigo-950/90 to-cyan-950/50 border border-indigo-500/35">
+            <div>
+              <span id="checkout-game-cat" class="text-xs font-bold text-cyan-300">Blox Fruits • Joki Race</span>
+              <h4 id="checkout-item-name" class="font-bold text-base sm:text-lg text-white">Joki Race V4 Full Gear</h4>
+              <p id="checkout-item-desc" class="text-xs text-slate-300 mt-0.5">Deskripsi layanan</p>
+            </div>
+            <div class="sm:text-right shrink-0">
+              <span class="text-xs text-slate-400 block">Total Pembayaran</span>
+              <span id="checkout-item-price" class="font-display text-xl sm:text-2xl font-extrabold text-cyan-400">Rp 50.000</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1.5">Username Roblox <span class="text-red-400">*</span></label>
+              <input type="text" id="input-roblox-user" required placeholder="Contoh: DlisszPlayer99" class="w-full px-4 py-3 rounded-xl bg-[#060913] border border-[#232d52] focus:border-cyan-400 focus:outline-none text-sm text-white" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-300 mb-1.5">Nomor WhatsApp Aktif <span class="text-red-400">*</span></label>
+              <input type="tel" id="input-whatsapp" required placeholder="Contoh: 081234567890" class="w-full px-4 py-3 rounded-xl bg-[#060913] border border-[#232d52] focus:border-cyan-400 focus:outline-none text-sm text-white" />
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <label class="block text-xs font-bold text-slate-300">
+                Password Roblox <span id="password-required-label" class="text-amber-400">(Wajib untuk Joki)</span>
+              </label>
+              <span class="text-[11px] text-emerald-400 font-semibold">100% Aman &amp; Anti-Hack</span>
+            </div>
+            <div class="relative">
+              <input type="password" id="input-roblox-pass" placeholder="Masukkan password akun Roblox (kosongkan jika beli akun/trade)" class="w-full px-4 pr-16 py-3 rounded-xl bg-[#060913] border border-[#232d52] focus:border-cyan-400 focus:outline-none text-sm text-white" />
+              <button type="button" onclick="togglePasswordVisibility()" class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-cyan-400 hover:text-cyan-300">
+                Lihat
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-300 mb-1.5">Catatan Tambahan (Opsional)</label>
+            <textarea id="input-notes" rows="2" placeholder="Contoh: Tolong fokusin Race Shark V4 dulu ya min, atau info Sea 2/Sea 3..." class="w-full px-4 py-2.5 rounded-xl bg-[#060913] border border-[#232d52] focus:border-cyan-400 focus:outline-none text-sm text-white"></textarea>
+          </div>
+
+          <div class="flex items-center justify-end gap-3 pt-2">
+            <button type="button" onclick="closeCheckoutModal()" class="px-5 py-3 rounded-xl bg-[#151c36] hover:bg-slate-800 text-slate-300 font-semibold text-sm">
+              Batal
+            </button>
+            <button type="submit" class="px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white font-bold text-sm shadow-lg shadow-indigo-600/30">
+              Lanjut Pembayaran QRIS &rarr;
+            </button>
+          </div>
+        </form>
+
+        <!-- STEP 2: PEMBAYARAN QRIS DINAMIS DLISSZ -->
+        <div id="qris-payment-step" class="hidden space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            <!-- Kartu QRIS Dinamis -->
+            <div class="lg:col-span-6 flex flex-col items-center p-4 sm:p-5 rounded-2xl bg-white text-slate-900 shadow-xl">
+              <div class="w-full flex items-center justify-between border-b border-slate-200 pb-2 mb-3">
+                <span class="text-xs font-extrabold tracking-wider uppercase text-red-600">QRIS DINAMIS • GPN</span>
+                <span class="text-[11px] font-bold text-slate-500">NMID: ID1026584718773</span>
+              </div>
+
+              <div class="w-full max-w-[290px] rounded-xl overflow-hidden border border-slate-200 bg-white p-1.5">
+                <img id="qris-image-display" alt="QRIS Dinamis Dlissz" class="w-full h-auto block mx-auto" />
+              </div>
+
+              <div class="mt-3 text-center w-full">
+                <p class="font-extrabold text-base text-slate-900">Merchant: Dlissz</p>
+                <div class="mt-1.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-extrabold">
+                  Nominal Terkunci: <span id="qris-locked-amount">Rp 0</span>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1.5">Mendukung DANA, GoPay, OVO, ShopeePay, SeaBank, BCA, BRI, Mandiri &amp; Semua E-Wallet</p>
+              </div>
+
+              <div class="flex items-center gap-2 w-full mt-4">
+                <button type="button" onclick="openZoomQris()" class="flex-1 py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition-colors">
+                  Perbesar QRIS
+                </button>
+                <a id="download-qris-link" href="#" download="QRIS-Dlissz-Store.png" class="flex-1 py-2.5 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold text-center transition-colors">
+                  Download QRIS
+                </a>
+              </div>
+            </div>
+
+            <!-- Form Konfirmasi Pembayaran -->
+            <div class="lg:col-span-6 space-y-4">
+              <div class="flex items-center justify-between p-3.5 rounded-2xl bg-amber-500/10 border border-amber-500/35">
+                <div>
+                  <p class="text-xs font-bold text-amber-300">Batas Waktu Pembayaran</p>
+                  <p class="text-[11px] text-slate-400">Scan QRIS di samping sesuai nominal</p>
+                </div>
+                <span id="payment-timer" class="font-display text-lg font-extrabold text-amber-400">15:00</span>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-[#060913] border border-[#232d52] space-y-2.5">
+                <div class="flex justify-between text-xs text-slate-400">
+                  <span>Produk</span>
+                  <span id="qris-summary-product" class="text-white font-semibold text-right">Produk</span>
+                </div>
+                <div class="flex justify-between text-xs text-slate-400">
+                  <span>Username Roblox</span>
+                  <span id="qris-summary-user" class="text-cyan-400 font-semibold">@username</span>
+                </div>
+                <div class="flex justify-between text-xs text-slate-400">
+                  <span>Biaya Admin QRIS</span>
+                  <span class="text-emerald-400 font-semibold">Rp 0 (Gratis)</span>
+                </div>
+                <div class="border-t border-[#232d52] pt-2.5 flex items-center justify-between">
+                  <span class="text-sm font-bold text-slate-200">Total Bayar</span>
+                  <span id="qris-summary-total" class="font-display text-xl font-extrabold text-cyan-400">Rp 0</span>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-[#151c36]/70 border border-[#232d52] space-y-3">
+                <label class="block text-xs font-bold text-slate-200">
+                  Nama Pengirim / E-Wallet / Bank <span class="text-red-400">*</span>
+                </label>
+                <input type="text" id="input-sender-name" placeholder="Contoh: DANA a.n. Rizky / BCA a.n. Budi" class="w-full px-3.5 py-2.5 rounded-xl bg-[#060913] border border-[#232d52] focus:border-cyan-400 focus:outline-none text-xs sm:text-sm text-white" />
+
+                <div>
+                  <label class="block text-xs font-bold text-slate-300 mb-1">Bukti Pembayaran (Opsional)</label>
+                  <input type="file" id="input-proof-file" accept="image/*" onchange="handleProofUpload(event)" class="block w-full text-xs text-slate-400 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-indigo-600/30 file:text-indigo-300 cursor-pointer" />
+                  <p id="proof-file-name" class="text-[11px] text-emerald-400 mt-1 hidden"></p>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-2.5 pt-1">
+                <button type="button" onclick="backToOrderForm()" class="px-4 py-3 rounded-xl bg-[#151c36] hover:bg-slate-800 text-slate-300 text-xs font-bold">
+                  &larr; Ubah Data
+                </button>
+                <button type="button" onclick="confirmPayment()" class="flex-1 py-3.5 px-5 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-extrabold text-sm shadow-lg shadow-emerald-500/25 transition-all">
+                  Konfirmasi Sudah Bayar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 2: ZOOM QRIS ==================== -->
+  <div id="zoom-qris-modal" onclick="closeZoomQris()" class="fixed inset-0 z-[70] hidden items-center justify-center p-4 bg-black/90 backdrop-blur-md">
+    <div onclick="event.stopPropagation()" class="relative max-w-md w-full bg-white rounded-3xl p-5 text-center shadow-2xl">
+      <button type="button" onclick="closeZoomQris()" class="absolute -top-3 -right-3 w-9 h-9 rounded-full bg-red-600 text-white font-bold flex items-center justify-center shadow-lg">
+        &times;
+      </button>
+      <p class="font-extrabold text-slate-900 text-base mb-2">Scan QRIS — Dlissz</p>
+      <img id="qris-zoom-image-display" alt="QRIS Dlissz Full" class="w-full h-auto rounded-xl border border-slate-200 mx-auto block" />
+      <p class="text-xs text-slate-600 mt-3 font-semibold">NMID: ID1026584718773 • Dlissz Store</p>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 3: INVOICE & STATUS PESANAN ==================== -->
+  <div id="invoice-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-5 bg-black/85 backdrop-blur-sm overflow-y-auto">
+    <div class="relative w-full max-w-2xl rounded-3xl bg-[#0e1326] border border-cyan-500/50 shadow-2xl overflow-hidden my-auto neon-glow">
+      <div class="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-indigo-900/80 to-cyan-900/50 border-b border-[#232d52]">
+        <div>
+          <h3 class="font-display font-extrabold text-base sm:text-lg text-white">Transaksi Berhasil Dibuat!</h3>
+          <p class="text-xs text-cyan-300">Pantau status pesanan atau hubungi Admin di bawah</p>
+        </div>
+        <button type="button" onclick="closeInvoiceModal()" class="p-2 rounded-xl bg-[#060913]/80 hover:bg-red-500/20 text-slate-300 hover:text-red-400 font-bold">
+          &times;
+        </button>
+      </div>
+      <div id="invoice-modal-content" class="p-5 sm:p-7 space-y-6 max-h-[82vh] overflow-y-auto"></div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 4: LIVE CHAT ADMIN ==================== -->
+  <div id="chat-modal" class="fixed inset-0 z-[60] hidden items-end sm:items-center justify-center p-0 sm:p-4 bg-black/75 backdrop-blur-sm">
+    <div class="w-full sm:max-w-lg h-[88vh] sm:h-[620px] rounded-t-3xl sm:rounded-3xl bg-[#0e1326] border border-[#232d52] shadow-2xl flex flex-col overflow-hidden">
+      <div class="px-5 py-4 bg-gradient-to-r from-indigo-900/85 via-purple-900/70 to-cyan-900/75 border-b border-[#232d52] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="relative">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-indigo-600 flex items-center justify-center font-display font-bold text-white">
+              DS
+            </div>
+            <span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#0e1326]"></span>
+          </div>
+          <div>
+            <h4 class="font-bold text-sm sm:text-base text-white">Admin Dlissz Store</h4>
+            <p class="text-[11px] text-emerald-300">Online • Fast Respon</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeAdminChat()" class="p-2 rounded-xl bg-[#060913]/70 hover:bg-red-500/20 text-slate-300 hover:text-red-400 font-bold">
+          &times;
+        </button>
+      </div>
+
+      <div id="chat-order-banner" class="hidden px-4 py-2.5 bg-cyan-950/70 border-b border-cyan-500/30 flex items-center justify-between gap-2 text-xs">
+        <span class="text-cyan-200 truncate">Order Aktif: <strong id="chat-active-invoice" class="font-mono text-white">DLS-2026XXXX</strong></span>
+        <button type="button" onclick="sendOrderSummaryToChat()" class="px-2.5 py-1 rounded-lg bg-cyan-500/25 hover:bg-cyan-500/35 text-cyan-300 font-bold shrink-0">
+          Kirim Detail Order
+        </button>
+      </div>
+
+      <div id="chat-messages-box" class="flex-1 p-4 overflow-y-auto space-y-3 bg-[#060913]/70"></div>
+
+      <div class="px-4 py-2 border-t border-[#232d52] bg-[#0e1326] flex items-center gap-2 overflow-x-auto no-scrollbar">
+        <button type="button" onclick="sendQuickChat('Min, saya sudah bayar QRIS tolong dicek ya!')" class="shrink-0 px-3 py-1.5 rounded-full bg-[#151c36] hover:bg-indigo-600/30 border border-[#232d52] text-[11px] text-slate-200">
+          Konfirmasi Bayar QRIS
+        </button>
+        <button type="button" onclick="sendQuickChat('Estimasi pengerjaan joki berapa lama min?')" class="shrink-0 px-3 py-1.5 rounded-full bg-[#151c36] hover:bg-indigo-600/30 border border-[#232d52] text-[11px] text-slate-200">
+          Estimasi Proses?
+        </button>
+        <button type="button" onclick="sendQuickChat('Akun saya sudah siap diproses min.')" class="shrink-0 px-3 py-1.5 rounded-full bg-[#151c36] hover:bg-indigo-600/30 border border-[#232d52] text-[11px] text-slate-200">
+          Akun Siap Diproses
+        </button>
+      </div>
+
+      <div class="p-3.5 bg-[#151c36] border-t border-[#232d52] space-y-2.5">
+        <form onsubmit="handleSendChat(event)" class="flex items-center gap-2">
+          <input type="text" id="chat-input-field" placeholder="Tulis pesan ke Admin Dlissz..." class="flex-1 px-4 py-2.5 rounded-xl bg-[#060913] border border-[#232d52] focus:border-cyan-400 focus:outline-none text-xs sm:text-sm text-white" />
+          <button type="submit" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white font-bold text-xs sm:text-sm">
+            Kirim
+          </button>
+        </form>
+        <a id="whatsapp-direct-btn" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors">
+          Lanjut Chat via WhatsApp Admin (Fast Respon)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SCRIPT MANDIRI LENGKAP (TANPA DEPENDENCY EKSTERNAL) ==================== -->
+  <script>
+    // 1. KONFIGURASI & PAYLOAD ASLI QRIS DLISSZ
+    const STATIC_QRIS_PAYLOAD =
+      '00020101021126570011ID.DANA.WWW011893600915303476259102090347625910303UMI51440014ID.CO.QRIS.WWW0215ID10265847187730303UMI5204594553033605802ID5906Dlissz6014Kab. Banyuasin61053096163041D79';
+    const ADMIN_WA_NUMBER = '6281234567890'; // Ganti nomor WhatsApp Admin di sini
+    const STORAGE_KEY_ORDERS = 'dlissz_store_orders_v2';
+    const STORAGE_KEY_CHAT = 'dlissz_store_chat_v2';
+
+    // 2. DATA KATALOG LENGKAP (18 ITEM BLOX FRUITS + FISCH + FISH IT + MAP LAINNYA)
+    const STORE_CATALOG = {
+      bloxfruits: {
+        name: 'Blox Fruits',
+        categories: [
+          { id: 'all', label: 'Semua' },
+          { id: 'akun', label: 'Akun' },
+          { id: 'fruit', label: 'Fruit' },
+          { id: 'joki', label: 'Joki' },
+          { id: 'joki_race', label: 'Joki Race' },
+          { id: 'joki_level', label: 'Joki Level' },
+          { id: 'joki_coin', label: 'Joki Coin' },
+        ],
+        products: [
+          // === KATEGORI: AKUN (3 ITEM) ===
+          {
+            id: 'bf-akun-1',
+            category: 'akun',
+            categoryLabel: 'Akun',
+            title: 'Akun Sultan Max Level + Permanent Kitsune / Dragon',
+            desc: 'Level 2800 (Max), Permanent Kitsune atau Dragon aktif, Godhuman, CDK, data polos 100% Anti-HB.',
+            price: 900000,
+            tag: 'Sultan',
+            needsPassword: false,
+            est: 'Instan 5 Menit',
+          },
+          {
+            id: 'bf-akun-2',
+            category: 'akun',
+            categoryLabel: 'Akun',
+            title: 'Akun Max Level + Godhuman + CDK + Soul Guitar + fruit use kitsune',
+            desc: 'Level 2800 (Max), Fighting Style Godhuman, Cursed Dual Katana, Soul Guitar, bonus Mythical Fruit di Inventory.',
+            price: 65000,
+            tag: 'Best Seller',
+            needsPassword: false,
+            est: 'Instan 5 Menit',
+          },
+          {
+            id: 'bf-akun-3',
+            category: 'akun',
+            categoryLabel: 'Akun',
+            title: 'Akun Max Level + Random Race V4 Full Gear',
+            desc: 'Level Max 2600 + 1 Race V4 Full Gear (Shark/Angel/Cyborg/Ghoul) + Beli 25M+ & Fragment 30K+.',
+            price: 95000,
+            tag: 'Hot',
+            needsPassword: false,
+            est: 'Instan 10 Menit',
+          },
+
+          // === KATEGORI: FRUIT (3 ITEM) ===
+          {
+            id: 'bf-fruit-1',
+            category: 'fruit',
+            categoryLabel: 'Fruit',
+            title: 'Venom (trade)',
+            desc: 'Dikirim langsung via fitur trade In-Game tanpa perlu login akun..',
+            price: 20000,
+            tag: 'Mytichal',
+            needsPassword: false,
+            est: '10 - 15 Menit',
+          },
+          {
+            id: 'bf-fruit-2',
+            category: 'fruit',
+            categoryLabel: 'Fruit',
+            title: 'Skin HellfireGas (Trade)',
+            desc: 'Pilih salah satu Physical Fruit (tulis di catatan). Pengiriman aman via Trade Sea 2 / Sea 3.',
+            price: 35000,
+            tag: 'Mythical',
+            needsPassword: false,
+            est: '10 - 15 Menit',
+          },
+          {
+            id: 'bf-fruit-3',
+            category: 'fruit',
+            categoryLabel: 'Fruit',
+            title: 'Logia Dough Fruit (Trade)',
+            desc: 'Pengiriman via Trade Sea 2 / Sea 3. Siapkan fruit tumbal untuk menyeimbangkan value trade.',
+            price: 10000,
+            tag: 'Terlaris',
+            needsPassword: false,
+            est: '10 - 15 Menit',
+          },
+
+          // === KATEGORI: JOKI (3 ITEM) ===
+          {
+            id: 'bf-joki-1',
+            category: 'joki',
+            categoryLabel: 'Joki',
+            title: 'Joki Raid Full Awakening (5x Raid)',
+            desc: 'Carry & joki 5x Raid hingga Full Awakening (Dough, Buddha, Magma, Light, Phoenix, dll).',
+            price: 15000,
+            tag: 'Kilat',
+            needsPassword: true,
+            est: '15 - 25 Menit',
+          },
+          {
+            id: 'bf-joki-2',
+            category: 'joki',
+            categoryLabel: 'Joki',
+            title: 'Joki Unlock Cursed Dual Katana (CDK) + Soul Guitar',
+            desc: 'Paket lengkap pengerjaan seluruh puzzle Yama & Tushita hingga CDK + Soul Guitar terbuka.',
+            price: 30000,
+            tag: 'Paket Hemat',
+            needsPassword: true,
+            est: '30 - 60 Menit',
+          },
+          {
+            id: 'bf-joki-3',
+            category: 'joki',
+            categoryLabel: 'Joki',
+            title: 'Joki Godhuman + Sanguine Art Material',
+            desc: 'Farming mastery seluruh Fighting Style + material Leviathan Heart untuk Sanguine Art.',
+            price: 40000,
+            tag: 'Pro Team',
+            needsPassword: true,
+            est: '45 - 90 Menit',
+          },
+
+          // === KATEGORI: JOKI RACE (3 ITEM) ===
+          {
+            id: 'bf-race-1',
+            category: 'joki_race',
+            categoryLabel: 'Joki Race',
+            title: 'Joki Race V4 Full Gear (Tier 1 - Tier 5)',
+            desc: 'Pull Lever + Temple of Time + Trial V4 hingga Full Gear (5x Trial + Train lengkap).',
+            price: 50000,
+            tag: 'Terlaris',
+            needsPassword: true,
+            est: '45 - 90 Menit',
+          },
+          {
+            id: 'bf-race-2',
+            category: 'joki_race',
+            categoryLabel: 'Joki Race',
+            title: 'Joki Race V3 All Race (Shark/Angel/Cyborg/Ghoul/Human/Mink)',
+            desc: 'Selesaikan quest Alchemist (V2) dan quest Arowe (V3) untuk semua jenis Race.',
+            price: 15000,
+            tag: 'Murah',
+            needsPassword: true,
+            est: '15 - 20 Menit',
+          },
+          {
+            id: 'bf-race-3',
+            category: 'joki_race',
+            categoryLabel: 'Joki Race',
+            title: 'Joki 1x Trial Race V4 + Full Training',
+            desc: 'Jasa menang 1x Trial V4 sekaligus dibantu training hingga siap lanjut ke gear berikutnya.',
+            price: 12000,
+            tag: 'Fast',
+            needsPassword: true,
+            est: '15 - 25 Menit',
+          },
+
+          // === KATEGORI: JOKI LEVEL (3 ITEM) ===
+          {
+            id: 'bf-lvl-1',
+            category: 'joki_level',
+            categoryLabel: 'Joki Level',
+            title: 'Joki Level 1 - Max Level 2800 (Full Paket)',
+            desc: 'Grinding cepat dari Level 1 (Sea 1) sampai Max Level 2600 (Sea 3) + bonus Beli & Mastery.',
+            price: 60000,
+            tag: 'Full Max',
+            needsPassword: true,
+            est: '90 - 150 Menit',
+          },
+          {
+            id: 'bf-lvl-2',
+            category: 'joki_level',
+            categoryLabel: 'Joki Level',
+            title: 'Joki Level per 100 Level (Semua Sea)',
+            desc: 'Tambahan +100 Level untuk Sea 1, Sea 2, maupun Sea 3 dengan proses kilat & aman.',
+            price: 5000,
+            tag: 'Hemat',
+            needsPassword: true,
+            est: '10 - 15 Menit',
+          },
+          {
+            id: 'bf-lvl-3',
+            category: 'joki_level',
+            categoryLabel: 'Joki Level',
+            title: 'Joki Level 1500 - 2800 (Sea 3 Max)',
+            desc: 'Grinding penuh di Third Sea dari level 1500 hingga mentok 2600 + jutaan Beli.',
+            price: 35000,
+            tag: 'Populer',
+            needsPassword: true,
+            est: '45 - 75 Menit',
+          },
+
+          // === KATEGORI: JOKI COIN (3 ITEM) ===
+          {
+            id: 'bf-coin-1',
+            category: 'joki_coin',
+            categoryLabel: 'Joki Coin',
+            title: 'Joki Coin / 10.000.000 (10M) Beli',
+            desc: 'Farming 10 Juta uang Beli murni aman anti-banned untuk beli Pedang, Gun & Fighting Style.',
+            price: 15000,
+            tag: 'Murah',
+            needsPassword: true,
+            est: '15 - 25 Menit',
+          },
+          {
+            id: 'bf-coin-2',
+            category: 'joki_coin',
+            categoryLabel: 'Joki Coin',
+            title: 'Joki 25.000 Fragment',
+            desc: 'Farming 25.000 Fragments lewat Raid/Sea Beast untuk Awaken Fruit & Upgrade Race V4.',
+            price: 20000,
+            tag: 'Best Value',
+            needsPassword: true,
+            est: '25 - 40 Menit',
+          },
+          {
+            id: 'bf-coin-3',
+            category: 'joki_coin',
+            categoryLabel: 'Joki Coin',
+            title: 'Joki Coin / 50.000.000 (50M) Beli Sultan',
+            desc: 'Paket Sultan 50 Juta Beli + bonus drops & mastery selama proses farming berlangsung.',
+            price: 40000,
+            tag: 'Sultan',
+            needsPassword: true,
+            est: '40 - 60 Menit',
+          },
+        ],
+      },
+      fisch: {
+        name: 'Fisch',
+        categories: [
+          { id: 'all', label: 'Semua' },
+          { id: 'joki_coin', label: 'Joki Coin (C$)' },
+          { id: 'joki_level', label: 'Joki Level' },
+          { id: 'rod', label: 'Unlock Rod & Relic' },
+          { id: 'akun', label: 'Akun Fisch' },
+        ],
+        products: [
+          {
+            id: 'fisch-1',
+            category: 'joki_coin',
+            categoryLabel: 'Joki Coin (C$)',
+            title: 'Joki 500.000 C$ (Coin Fisch)',
+            desc: 'Farming 500K C$ cepat & aman untuk membeli Rod & Bait terbaik di Fisch.',
+            price: 15000,
+            tag: 'Populer',
+            needsPassword: true,
+            est: '20 - 30 Menit',
+          },
+          {
+            id: 'fisch-2',
+            category: 'joki_coin',
+            categoryLabel: 'Joki Coin (C$)',
+            title: 'Joki 2.000.000 (2M) C$ Sultan',
+            desc: 'Paket 2 Juta C$ + bonus tangkapan ikan Mythic & Exotic selama sesi memancing.',
+            price: 45000,
+            tag: 'Best Seller',
+            needsPassword: true,
+            est: '45 - 60 Menit',
+          },
+          {
+            id: 'fisch-3',
+            category: 'rod',
+            categoryLabel: 'Unlock Rod & Relic',
+            title: 'Joki Unlock Trident Rod / Rod of the Depths',
+            desc: 'Bantu lengkapi Bestiary & Abyssal/Hexed Enchant Relic hingga Rod terbuka.',
+            price: 35000,
+            tag: 'Pro Service',
+            needsPassword: true,
+            est: '30 - 60 Menit',
+          },
+          {
+            id: 'fisch-4',
+            category: 'joki_level',
+            categoryLabel: 'Joki Level',
+            title: 'Joki +100 Level Fisch',
+            desc: 'Naikkan 100 level karakter Fisch kamu dengan cepat menggunakan setup rod terbaik.',
+            price: 20000,
+            tag: 'Fast',
+            needsPassword: true,
+            est: '25 - 40 Menit',
+          },
+          {
+            id: 'fisch-5',
+            category: 'akun',
+            categoryLabel: 'Akun Fisch',
+            title: 'Akun Fisch Sultan (Rod of The Depths + 1M C$)',
+            desc: 'Akun siap pakai data polos dengan Rod of The Depths & 1.000.000 C$.',
+            price: 55000,
+            tag: 'Ready Stock',
+            needsPassword: false,
+            est: 'Instan 5 Menit',
+          },
+        ],
+      },
+      fishit: {
+        name: 'Fish It',
+        categories: [
+          { id: 'all', label: 'Semua' },
+          { id: 'joki_coin', label: 'Joki Coin' },
+          { id: 'ikan', label: 'Ikan Mythic / Secret' },
+          { id: 'joki_level', label: 'Joki Level & Rod' },
+          { id: 'akun', label: 'Akun Fish It' },
+        ],
+        products: [
+          {
+            id: 'fishit-1',
+            category: 'joki_coin',
+            categoryLabel: 'Joki Coin',
+            title: 'Joki 1.000.000 Coin Fish It',
+            desc: 'Farming 1 Juta Coin cepat & aman untuk upgrade pancingan dan kapal.',
+            price: 15000,
+            tag: 'Populer',
+            needsPassword: true,
+            est: '20 - 35 Menit',
+          },
+          {
+            id: 'fishit-2',
+            category: 'ikan',
+            categoryLabel: 'Ikan Mythic / Secret',
+            title: 'Joki Berburu Ikan Mythic / Secret Tier',
+            desc: 'Bantu dapatkan ikan langka tingkat Mythic/Secret untuk melengkapi index.',
+            price: 25000,
+            tag: 'Langka',
+            needsPassword: true,
+            est: '30 - 50 Menit',
+          },
+          {
+            id: 'fishit-3',
+            category: 'joki_level',
+            categoryLabel: 'Joki Level & Rod',
+            title: 'Joki Max Rod & Leveling Fish It',
+            desc: 'Paket leveling karakter + buka pulau & pancingan tier tertinggi di Fish It.',
+            price: 30000,
+            tag: 'Paket Lengkap',
+            needsPassword: true,
+            est: '35 - 60 Menit',
+          },
+          {
+            id: 'fishit-4',
+            category: 'akun',
+            categoryLabel: 'Akun Fish It',
+            title: 'Akun Fish It Sultan + Top Rod',
+            desc: 'Akun polos siap main dengan pancingan tinggi dan jutaan Coin.',
+            price: 45000,
+            tag: 'Ready',
+            needsPassword: false,
+            est: 'Instan 5 Menit',
+          },
+        ],
+      },
+      lainnya: {
+        name: 'Map Roblox Lainnya',
+        categories: [
+          { id: 'all', label: 'Semua' },
+          { id: 'anime', label: 'Anime Vanguards / AA' },
+          { id: 'petsim', label: 'Pet Simulator 99' },
+          { id: 'custom', label: 'Joki Custom Map' },
+        ],
+        products: [
+          {
+            id: 'other-1',
+            category: 'anime',
+            categoryLabel: 'Anime Vanguards / AA',
+            title: 'Joki Gems & Story / Raid Anime Vanguards',
+            desc: 'Farming Gems, Evolution Material & Raid carry cepat semua stage.',
+            price: 20000,
+            tag: 'Populer',
+            needsPassword: true,
+            est: '25 - 45 Menit',
+          },
+          {
+            id: 'other-2',
+            category: 'petsim',
+            categoryLabel: 'Pet Simulator 99',
+            title: '100M Diamonds / Huge Pet Pet Sim 99',
+            desc: 'Pengiriman via Trade / Mailbox aman & cepat langsung masuk ke akun kamu.',
+            price: 25000,
+            tag: 'Best Seller',
+            needsPassword: false,
+            est: '10 - 20 Menit',
+          },
+          {
+            id: 'other-3',
+            category: 'custom',
+            categoryLabel: 'Joki Custom Map',
+            title: 'Jasa Joki Custom Semua Map Roblox (Per Jam)',
+            desc: 'Request joki map Roblox apa saja (King Legacy, Haze Piece, Blade Ball, dll).',
+            price: 15000,
+            tag: 'Fleksibel',
+            needsPassword: true,
+            est: '60 Menit',
+          },
+        ],
+      },
+    };
+
+    // 3. STATE APLIKASI
+    let currentGame = 'bloxfruits';
+    let currentCategory = 'all';
+    let selectedProduct = null;
+    let pendingOrderDraft = null;
+    let activeTrackedOrderId = null;
+    let paymentCountdownInterval = null;
+    let uploadedProofName = '';
+    let generatedQrisDataUrl = '';
+
+    // 4. UTILITAS FORMAT & NOTIFIKASI
+    function formatRupiah(amount) {
+      const num = Number(amount) || 0;
+      return 'Rp ' + num.toLocaleString('id-ID');
+    }
+
+    function formatDateTime(isoString) {
+      try {
+        return new Date(isoString).toLocaleString('id-ID', {
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+        });
+      } catch (e) {
+        return 'Baru saja';
+      }
+    }
+
+    function showToast(message, type) {
+      const container = document.getElementById('toast-container');
+      if (!container) return;
+      const styles = {
+        success: 'bg-emerald-950/95 border-emerald-400/70 text-emerald-200',
+        error: 'bg-red-950/95 border-red-400/70 text-red-200',
+        info: 'bg-indigo-950/95 border-cyan-400/70 text-cyan-100',
+      };
+      const el = document.createElement('div');
+      el.className = 'pointer-events-auto px-4 py-3 rounded-2xl border shadow-xl text-xs sm:text-sm font-semibold backdrop-blur-md transition-all ' + (styles[type] || styles.info);
+      el.textContent = message;
+      container.appendChild(el);
+      setTimeout(function () {
+        el.style.opacity = '0';
+        setTimeout(function () { el.remove(); }, 250);
+      }, 3000);
+    }
+
+    // 5. PURE JAVASCRIPT QR CODE ENCODER (MANDIRI TANPA CDN INTERNET)
+    // Implementasi lengkap QR Code Byte Mode (Versi 1 - 14, ECC Level L) agar QRIS Dinamis 100% bisa di-scan E-Wallet/M-Banking
+    const PureQRCode = (function () {
+      const EXP_TABLE = new Array(256);
+      const LOG_TABLE = new Array(256);
+      for (let i = 0; i < 8; i++) EXP_TABLE[i] = 1 << i;
+      for (let i = 8; i < 256; i++) {
+        EXP_TABLE[i] = EXP_TABLE[i - 4] ^ EXP_TABLE[i - 5] ^ EXP_TABLE[i - 6] ^ EXP_TABLE[i - 8];
+      }
+      for (let i = 0; i < 255; i++) LOG_TABLE[EXP_TABLE[i]] = i;
+
+      function glog(n) { return LOG_TABLE[n]; }
+      function gexp(n) {
+        while (n < 0) n += 255;
+        while (n >= 256) n -= 255;
+        return EXP_TABLE[n];
+      }
+
+      function polyMultiply(p1, p2) {
+        const res = new Array(p1.length + p2.length - 1).fill(0);
+        for (let i = 0; i < p1.length; i++) {
+          for (let j = 0; j < p2.length; j++) {
+            res[i + j] ^= gexp(glog(p1[i]) + glog(p2[j]));
+          }
+        }
+        return res;
+      }
+
+      function getErrorCorrectPolynomial(ecLength) {
+        let a = [1];
+        for (let i = 0; i < ecLength; i++) {
+          a = polyMultiply(a, [1, gexp(i)]);
+        }
+        return a;
+      }
+
+      function polyMod(dividend, divisor) {
+        const res = dividend.slice();
+        while (res.length - divisor.length >= 0) {
+          if (res[0] !== 0) {
+            const ratio = glog(res[0]) - glog(divisor[0]);
+            for (let i = 0; i < divisor.length; i++) {
+              res[i] ^= gexp(glog(divisor[i]) + ratio);
+            }
+          }
+          res.shift();
+        }
+        return res;
+      }
+
+      // Tabel RS Blocks Level L untuk versi 1..15: [count, totalCount, dataCount]
+      const RS_BLOCKS_L = [
+        null,
+        [[1, 26, 19]],
+        [[1, 44, 34]],
+        [[1, 70, 55]],
+        [[1, 100, 80]],
+        [[1, 134, 108]],
+        [[2, 86, 68]],
+        [[2, 98, 78]],
+        [[2, 121, 97]],
+        [[2, 146, 116]],
+        [[2, 86, 68], [2, 87, 69]],
+        [[4, 101, 81]],
+        [[2, 116, 92], [2, 117, 93]],
+        [[4, 133, 107]],
+        [[3, 145, 115], [1, 146, 116]],
+        [[5, 109, 87], [1, 110, 88]],
+      ];
+
+      const ALIGNMENT_PATTERNS = [
+        [], [], [6, 18], [6, 22], [6, 26], [6, 30], [6, 34],
+        [6, 22, 38], [6, 24, 42], [6, 26, 46], [6, 28, 50],
+        [6, 30, 54], [6, 32, 58], [6, 34, 62], [6, 26, 46, 66], [6, 26, 48, 70],
+      ];
+
+      function getBCHDigit(data) {
+        let digit = 0;
+        while (data !== 0) { digit++; data >>>= 1; }
+        return digit;
+      }
+
+      function getBCHTypeInfo(data) {
+        let d = data << 10;
+        while (getBCHDigit(d) - getBCHDigit(0x537) >= 0) {
+          d ^= (0x537 << (getBCHDigit(d) - getBCHDigit(0x537)));
+        }
+        return ((data << 10) | d) ^ 0x5412;
+      }
+
+      function getBCHTypeNumber(data) {
+        let d = data << 12;
+        while (getBCHDigit(d) - getBCHDigit(0x1f25) >= 0) {
+          d ^= (0x1f25 << (getBCHDigit(d) - getBCHDigit(0x1f25)));
+        }
+        return (data << 12) | d;
+      }
+
+      function generateMatrix(text) {
+        const bytes = [];
+        for (let i = 0; i < text.length; i++) {
+          bytes.push(text.charCodeAt(i) & 0xff);
+        }
+
+        // Tentukan versi minimum yang muat
+        let version = 1;
+        for (let v = 1; v <= 15; v++) {
+          const blocks = RS_BLOCKS_L[v];
+          let cap = 0;
+          blocks.forEach(function (b) { cap += b[0] * b[2]; });
+          const headerBits = v < 10 ? 12 : 20;
+          if (cap * 8 >= headerBits + bytes.length * 8) {
+            version = v;
+            break;
+          }
+        }
+
+        const blocksDef = RS_BLOCKS_L[version];
+        const rsBlocks = [];
+        blocksDef.forEach(function (b) {
+          for (let i = 0; i < b[0]; i++) rsBlocks.push({ totalCount: b[1], dataCount: b[2] });
+        });
+
+        let totalDataCount = 0;
+        rsBlocks.forEach(function (b) { totalDataCount += b.dataCount; });
+
+        // Bit buffer
+        const bits = [];
+        function putBits(num, len) {
+          for (let i = 0; i < len; i++) {
+            bits.push(((num >>> (len - i - 1)) & 1) === 1);
+          }
+        }
+
+        putBits(4, 4); // Mode: Byte (0100)
+        putBits(bytes.length, version < 10 ? 8 : 16);
+        for (let i = 0; i < bytes.length; i++) putBits(bytes[i], 8);
+        if (bits.length + 4 <= totalDataCount * 8) putBits(0, 4);
+        while (bits.length % 8 !== 0) bits.push(false);
+
+        const dataBytes = [];
+        for (let i = 0; i < bits.length; i += 8) {
+          let val = 0;
+          for (let j = 0; j < 8; j++) if (bits[i + j]) val |= (0x80 >>> j);
+          dataBytes.push(val);
+        }
+        let padToggle = true;
+        while (dataBytes.length < totalDataCount) {
+          dataBytes.push(padToggle ? 0xec : 0x11);
+          padToggle = !padToggle;
+        }
+
+        // Encode RS data & EC codewords
+        let offset = 0;
+        let maxDcCount = 0;
+        let maxEcCount = 0;
+        const dcdata = [];
+        const ecdata = [];
+
+        for (let r = 0; r < rsBlocks.length; r++) {
+          const dcCount = rsBlocks[r].dataCount;
+          const ecCount = rsBlocks[r].totalCount - dcCount;
+          maxDcCount = Math.max(maxDcCount, dcCount);
+          maxEcCount = Math.max(maxEcCount, ecCount);
+
+          const dc = dataBytes.slice(offset, offset + dcCount);
+          offset += dcCount;
+          const rsPoly = getErrorCorrectPolynomial(ecCount);
+          const padded = dc.concat(new Array(rsPoly.length - 1).fill(0));
+          const modPoly = polyMod(padded, rsPoly);
+          const ec = new Array(rsPoly.length - 1).fill(0);
+          for (let i = 0; i < ec.length; i++) {
+            const modIndex = i + modPoly.length - ec.length;
+            ec[i] = modIndex >= 0 ? modPoly[modIndex] : 0;
+          }
+          dcdata.push(dc);
+          ecdata.push(ec);
+        }
+
+        const finalBytes = [];
+        for (let i = 0; i < maxDcCount; i++) {
+          for (let r = 0; r < rsBlocks.length; r++) {
+            if (i < dcdata[r].length) finalBytes.push(dcdata[r][i]);
+          }
+        }
+        for (let i = 0; i < maxEcCount; i++) {
+          for (let r = 0; r < rsBlocks.length; r++) {
+            if (i < ecdata[r].length) finalBytes.push(ecdata[r][i]);
+          }
+        }
+
+        const moduleCount = version * 4 + 17;
+        const modules = Array.from({ length: moduleCount }, function () {
+          return new Array(moduleCount).fill(null);
+        });
+
+        function setupPositionProbePattern(row, col) {
+          for (let r = -1; r <= 7; r++) {
+            if (row + r <= -1 || moduleCount <= row + r) continue;
+            for (let c = -1; c <= 7; c++) {
+              if (col + c <= -1 || moduleCount <= col + c) continue;
+              if (
+                (0 <= r && r <= 6 && (c === 0 || c === 6)) ||
+                (0 <= c && c <= 6 && (r === 0 || r === 6)) ||
+                (2 <= r && r <= 4 && 2 <= c && c <= 4)
+              ) {
+                modules[row + r][col + c] = true;
+              } else {
+                modules[row + r][col + c] = false;
+              }
+            }
+          }
+        }
+
+        setupPositionProbePattern(0, 0);
+        setupPositionProbePattern(moduleCount - 7, 0);
+        setupPositionProbePattern(0, moduleCount - 7);
+
+        // Alignment patterns
+        const pos = ALIGNMENT_PATTERNS[version];
+        for (let i = 0; i < pos.length; i++) {
+          for (let j = 0; j < pos.length; j++) {
+            const row = pos[i];
+            const col = pos[j];
+            if (modules[row][col] !== null) continue;
+            for (let r = -2; r <= 2; r++) {
+              for (let c = -2; c <= 2; c++) {
+                modules[row + r][col + c] =
+                  r === -2 || r === 2 || c === -2 || c === 2 || (r === 0 && c === 0);
+              }
+            }
+          }
+        }
+
+        // Timing patterns
+        for (let r = 8; r < moduleCount - 8; r++) {
+          if (modules[r][6] === null) modules[r][6] = r % 2 === 0;
+        }
+        for (let c = 8; c < moduleCount - 8; c++) {
+          if (modules[6][c] === null) modules[6][c] = c % 2 === 0;
+        }
+
+        // Format info (ECC L = 1, Mask Pattern = 0)
+        const maskPattern = 0;
+        const typeInfoBits = getBCHTypeInfo((1 << 3) | maskPattern);
+        for (let i = 0; i < 15; i++) {
+          const mod = ((typeInfoBits >> i) & 1) === 1;
+          if (i < 6) modules[i][8] = mod;
+          else if (i < 8) modules[i + 1][8] = mod;
+          else modules[moduleCount - 15 + i][8] = mod;
+
+          if (i < 8) modules[8][moduleCount - i - 1] = mod;
+          else if (i < 9) modules[8][15 - i] = mod;
+          else modules[8][15 - i - 1] = mod;
+        }
+        modules[moduleCount - 8][8] = true;
+
+        if (version >= 7) {
+          const typeNumBits = getBCHTypeNumber(version);
+          for (let i = 0; i < 18; i++) {
+            const mod = ((typeNumBits >> i) & 1) === 1;
+            modules[Math.floor(i / 3)][(i % 3) + moduleCount - 8 - 3] = mod;
+            modules[(i % 3) + moduleCount - 8 - 3][Math.floor(i / 3)] = mod;
+          }
+        }
+
+        // Map data bits dengan Mask Pattern 0: (row + col) % 2 === 0
+        let inc = -1;
+        let row = moduleCount - 1;
+        let bitIndex = 7;
+        let byteIndex = 0;
+
+        for (let col = moduleCount - 1; col > 0; col -= 2) {
+          if (col === 6) col--;
+          while (true) {
+            for (let c = 0; c < 2; c++) {
+              if (modules[row][col - c] === null) {
+                let dark = false;
+                if (byteIndex < finalBytes.length) {
+                  dark = ((finalBytes[byteIndex] >>> bitIndex) & 1) === 1;
+                }
+                if ((row + (col - c)) % 2 === 0) dark = !dark;
+                modules[row][col - c] = dark;
+                bitIndex--;
+                if (bitIndex === -1) {
+                  byteIndex++;
+                  bitIndex = 7;
+                }
+              }
+            }
+            row += inc;
+            if (row < 0 || moduleCount <= row) {
+              row -= inc;
+              inc = -inc;
+              break;
+            }
+          }
+        }
+
+        return modules;
+      }
+
+      return { generateMatrix: generateMatrix };
+    })();
+
+    // 6. KONVERSI PAYLOAD QRIS STATIS KE QRIS DINAMIS (TAG 54 + CRC16-CCITT 0x1021)
+    function computeCRC16CCITT(inputStr) {
+      let crc = 0xffff;
+      for (let i = 0; i < inputStr.length; i++) {
+        crc ^= inputStr.charCodeAt(i) << 8;
+        for (let bit = 0; bit < 8; bit++) {
+          if ((crc & 0x8000) !== 0) {
+            crc = ((crc << 1) ^ 0x1021) & 0xffff;
+          } else {
+            crc = (crc << 1) & 0xffff;
+          }
+        }
+      }
+      return crc.toString(16).toUpperCase().padStart(4, '0');
+    }
+
+    function buildDynamicQrisPayload(amountRupiah) {
+      const cleanAmount = Math.max(1, Math.round(Number(amountRupiah) || 0));
+      const amountStr = String(cleanAmount);
+      const amountLen = String(amountStr.length).padStart(2, '0');
+      const tag54 = '54' + amountLen + amountStr;
+
+      const crcIdx = STATIC_QRIS_PAYLOAD.lastIndexOf('6304');
+      let base = crcIdx !== -1
+        ? STATIC_QRIS_PAYLOAD.slice(0, crcIdx + 4)
+        : STATIC_QRIS_PAYLOAD.slice(0, -4) + '6304';
+
+      // Ubah tipe statis (010211) menjadi dinamis (010212)
+      base = base.replace('010211', '010212');
+
+      // Sisipkan Tag 54 tepat sebelum 5802ID
+      const idx58 = base.indexOf('5802ID');
+      let payloadWithAmount;
+      if (idx58 !== -1) {
+        payloadWithAmount = base.slice(0, idx58) + tag54 + base.slice(idx58);
+      } else {
+        payloadWithAmount = base.slice(0, -4) + tag54 + '6304';
+      }
+
+      const crcHex = computeCRC16CCITT(payloadWithAmount);
+      return payloadWithAmount + crcHex;
+    }
+
+    function generateDlisszQrisDataUrl(amountRupiah) {
+      const payload = amountRupiah > 0
+        ? buildDynamicQrisPayload(amountRupiah)
+        : STATIC_QRIS_PAYLOAD;
+
+      const matrix = PureQRCode.generateMatrix(payload);
+      const modCount = matrix.length;
+
+      const cardCanvas = document.createElement('canvas');
+      const W = 600;
+      const H = 820;
+      cardCanvas.width = W;
+      cardCanvas.height = H;
+      const ctx = cardCanvas.getContext('2d');
+
+      // Latar Putih Bersih
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, W, H);
+
+      // Ornamen Segitiga Merah Khas QRIS
+      ctx.fillStyle = '#dc2626';
+      ctx.beginPath();
+      ctx.moveTo(0, 175);
+      ctx.lineTo(135, 275);
+      ctx.lineTo(0, 445);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(W, 535);
+      ctx.lineTo(W, H);
+      ctx.lineTo(285, H);
+      ctx.closePath();
+      ctx.fill();
+
+      // Header QRIS & GPN
+      ctx.fillStyle = '#0f172a';
+      ctx.font = '900 34px sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText('QRIS', 38, 66);
+
+      ctx.font = '700 13px sans-serif';
+      ctx.fillStyle = '#1e293b';
+      ctx.fillText('QR Code Standar', 142, 50);
+      ctx.fillText('Pembayaran Nasional', 142, 67);
+
+      ctx.fillStyle = '#1d4ed8';
+      ctx.font = '900 24px sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText('GPN', 558, 72);
+
+      // Identitas Merchant Dlissz & NMID
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#0f172a';
+      ctx.font = '800 32px sans-serif';
+      ctx.fillText('Dlissz', W / 2, 148);
+
+      ctx.fillStyle = '#475569';
+      ctx.font = '600 19px sans-serif';
+      ctx.fillText('NMID : ID1026584718773', W / 2, 182);
+
+      if (amountRupiah > 0) {
+        ctx.fillStyle = '#047857';
+        ctx.font = '800 22px sans-serif';
+        ctx.fillText('NOMINAL: ' + formatRupiah(amountRupiah), W / 2, 218);
+      } else {
+        ctx.fillStyle = '#475569';
+        ctx.font = '600 19px sans-serif';
+        ctx.fillText('A01', W / 2, 218);
+      }
+
+      // Kotak Putih Quiet Zone + Render Modul QR Code
+      const qrBoxSize = 336;
+      const qrBoxX = (W - qrBoxSize) / 2;
+      const qrBoxY = 248;
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(qrBoxX - 14, qrBoxY - 14, qrBoxSize + 28, qrBoxSize + 28);
+
+      const cellSize = qrBoxSize / modCount;
+      ctx.fillStyle = '#090d16';
+      for (let r = 0; r < modCount; r++) {
+        for (let c = 0; c < modCount; c++) {
+          if (matrix[r][c]) {
+            ctx.fillRect(
+              Math.floor(qrBoxX + c * cellSize),
+              Math.floor(qrBoxY + r * cellSize),
+              Math.ceil(cellSize),
+              Math.ceil(cellSize)
+            );
+          }
+        }
+      }
+
+      // Teks Bawah QRIS
+      ctx.fillStyle = '#1e293b';
+      ctx.font = '700 20px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('SATU QRIS UNTUK SEMUA', W / 2, 632);
+
+      ctx.fillStyle = '#475569';
+      ctx.font = '500 16px sans-serif';
+      ctx.fillText('Cek aplikasi penyelenggara di:', W / 2, 666);
+      ctx.fillText('www.aspi-qris.id', W / 2, 688);
+
+      ctx.textAlign = 'left';
+      ctx.fillStyle = '#334155';
+      ctx.font = '600 14px sans-serif';
+      ctx.fillText('Dicetak oleh: 93600915', 36, 766);
+      ctx.fillText('Versi cetak: 1.0.23.11.26', 36, 786);
+
+      ctx.textAlign = 'right';
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '700 12px sans-serif';
+      ctx.fillText('Cara bayar dengan QRIS', W - 26, 742);
+      ctx.font = '500 10px sans-serif';
+      ctx.fillText('Buka E-Wallet / M-Banking • Scan • Bayar', W - 26, 792);
+
+      return cardCanvas.toDataURL('image/png');
+    }
+
+    function updateQrisVisuals(amountRupiah) {
+      generatedQrisDataUrl = generateDlisszQrisDataUrl(amountRupiah || 0);
+      const mainImg = document.getElementById('qris-image-display');
+      const zoomImg = document.getElementById('qris-zoom-image-display');
+      const dlLink = document.getElementById('download-qris-link');
+      const lockedEl = document.getElementById('qris-locked-amount');
+
+      if (mainImg) mainImg.src = generatedQrisDataUrl;
+      if (zoomImg) zoomImg.src = generatedQrisDataUrl;
+      if (dlLink) {
+        dlLink.href = generatedQrisDataUrl;
+        dlLink.download = amountRupiah > 0
+          ? 'QRIS-Dlissz-' + amountRupiah + '.png'
+          : 'QRIS-Dlissz-Store.png';
+      }
+      if (lockedEl) {
+        lockedEl.textContent = amountRupiah > 0 ? formatRupiah(amountRupiah) : 'Sesuai Harga Item';
+      }
+    }
+
+    // 7. NAVIGASI GAME, SUB-MENU KATEGORI & RENDER PRODUK
+    function selectGame(gameKey, shouldScroll) {
+      if (!STORE_CATALOG[gameKey]) gameKey = 'bloxfruits';
+      currentGame = gameKey;
+      currentCategory = 'all';
+
+      document.querySelectorAll('.game-card').forEach(function (card) {
+        card.classList.remove('game-card-active');
+      });
+      const activeCard = document.getElementById('game-card-' + gameKey);
+      if (activeCard) activeCard.classList.add('game-card-active');
+
+      const gameData = STORE_CATALOG[gameKey];
+      const badgeEl = document.getElementById('selected-game-badge');
+      const titleEl = document.getElementById('category-section-title');
+      if (badgeEl) badgeEl.textContent = gameData.name;
+      if (titleEl) titleEl.textContent = 'Katalog & Menu Joki ' + gameData.name;
+
+      renderCategoryTabs();
+      renderProducts();
+
+      if (shouldScroll) {
+        const katalogEl = document.getElementById('katalog');
+        if (katalogEl) katalogEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function selectCategory(catId) {
+      currentCategory = catId;
+      renderCategoryTabs();
+      renderProducts();
+    }
+
+    function renderCategoryTabs() {
+      const gameData = STORE_CATALOG[currentGame];
+      const tabsContainer = document.getElementById('category-tabs');
+      if (!tabsContainer || !gameData) return;
+
+      tabsContainer.innerHTML = gameData.categories
+        .map(function (cat) {
+          const isActive = cat.id === currentCategory;
+          const activeClass = isActive
+            ? 'bg-gradient-to-r from-indigo-600 to-cyan-600 text-white border-cyan-400/70 shadow-lg shadow-indigo-600/25'
+            : 'bg-[#060913] hover:bg-[#151c36] text-slate-300 border-[#232d52]';
+          return (
+            '<button type="button" onclick="selectCategory(\'' + cat.id + '\')" ' +
+            'class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all border ' + activeClass + '">' +
+            '<span>' + cat.label + '</span>' +
+            '</button>'
+          );
+        })
+        .join('');
+    }
+
+    function getCategoryCardIconSvg(cat) {
+      if (cat === 'akun') {
+        return '<svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>';
+      }
+      if (cat === 'fruit') {
+        return '<svg class="w-4 h-4 text-rose-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"></path><path d="M10 2c1 .5 2 2 2 5"></path></svg>';
+      }
+      if (cat === 'joki_race') {
+        return '<svg class="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path></svg>';
+      }
+      if (cat === 'joki_level') {
+        return '<svg class="w-4 h-4 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>';
+      }
+      if (cat === 'joki_coin') {
+        return '<svg class="w-4 h-4 text-yellow-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v10"></path><path d="M9 10h6"></path></svg>';
+      }
+      return '<svg class="w-4 h-4 text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>';
+    }
+
+    function renderProducts() {
+      const gameData = STORE_CATALOG[currentGame];
+      const searchEl = document.getElementById('product-search');
+      const query = searchEl ? searchEl.value.trim().toLowerCase() : '';
+      const grid = document.getElementById('products-grid');
+      if (!grid || !gameData) return;
+
+      const filtered = gameData.products.filter(function (item) {
+        const matchCat = currentCategory === 'all' || item.category === currentCategory;
+        const matchQuery =
+          !query ||
+          item.title.toLowerCase().includes(query) ||
+          item.desc.toLowerCase().includes(query) ||
+          item.categoryLabel.toLowerCase().includes(query);
+        return matchCat && matchQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML =
+          '<div class="col-span-full text-center py-12 px-4 rounded-2xl bg-[#060913]/70 border border-dashed border-[#232d52]">' +
+          '<p class="text-sm font-bold text-slate-300">Paket layanan tidak ditemukan</p>' +
+          '<p class="text-xs text-slate-500 mt-1">Coba kata kunci lain atau klik tab "Semua".</p>' +
+          '</div>';
+        return;
+      }
+
+      grid.innerHTML = filtered
+        .map(function (item) {
+          const loginBadge = item.needsPassword
+            ? '<span class="text-amber-300 font-semibold">Via Login Akun</span>'
+            : '<span class="text-emerald-400 font-semibold">Tanpa Login</span>';
+
+          return (
+            '<div class="group flex flex-col justify-between rounded-2xl bg-[#060913]/95 border border-[#232d52] hover:border-cyan-400/70 p-5 transition-all hover:-translate-y-1 shadow-lg">' +
+              '<div>' +
+                '<div class="flex items-center justify-between gap-2 mb-3">' +
+                  '<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-500/15 border border-indigo-500/30 text-[11px] font-bold text-indigo-300">' +
+                    getCategoryCardIconSvg(item.category) +
+                    '<span>' + item.categoryLabel + '</span>' +
+                  '</span>' +
+                  '<span class="px-2.5 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 text-[10px] font-extrabold">' +
+                    item.tag +
+                  '</span>' +
+                '</div>' +
+                '<h4 class="font-bold text-base text-white group-hover:text-cyan-300 transition-colors leading-snug">' +
+                  item.title +
+                '</h4>' +
+                '<p class="text-xs text-slate-400 mt-2 leading-relaxed">' +
+                  item.desc +
+                '</p>' +
+              '</div>' +
+              '<div class="mt-5 pt-4 border-t border-[#232d52]/80">' +
+                '<div class="flex items-center justify-between text-[11px] text-slate-400 mb-3">' +
+                  '<span>Estimasi: <strong class="text-slate-200">' + item.est + '</strong></span>' +
+                  loginBadge +
+                '</div>' +
+                '<div class="flex items-center justify-between gap-3">' +
+                  '<div>' +
+                    '<span class="text-[10px] text-slate-500 block">Harga</span>' +
+                    '<span class="font-display text-lg font-extrabold text-white">' + formatRupiah(item.price) + '</span>' +
+                  '</div>' +
+                  '<button type="button" onclick="openCheckoutModal(\'' + item.id + '\')" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-extrabold shadow-md shadow-indigo-600/25 transition-all">' +
+                    'Beli Sekarang' +
+                  '</button>' +
+                '</div>' +
+              '</div>' +
+            '</div>'
+          );
+        })
+        .join('');
+    }
+
+    // 8. CHECKOUT MODAL & PEMBAYARAN QRIS DINAMIS
+    function openCheckoutModal(productId) {
+      const gameData = STORE_CATALOG[currentGame];
+      const product = gameData.products.find(function (p) { return p.id === productId; });
+      if (!product) return;
+
+      selectedProduct = Object.assign({}, product, { gameName: gameData.name });
+
+      document.getElementById('order-form').classList.remove('hidden');
+      document.getElementById('qris-payment-step').classList.add('hidden');
+      document.getElementById('modal-step-badge').textContent = 'Step 1 dari 2 • Data Akun Roblox';
+      document.getElementById('modal-product-title').textContent = 'Form Pemesanan';
+
+      document.getElementById('checkout-game-cat').textContent = selectedProduct.gameName + ' • ' + selectedProduct.categoryLabel;
+      document.getElementById('checkout-item-name').textContent = selectedProduct.title;
+      document.getElementById('checkout-item-desc').textContent = selectedProduct.desc;
+      document.getElementById('checkout-item-price').textContent = formatRupiah(selectedProduct.price);
+
+      const passInput = document.getElementById('input-roblox-pass');
+      const passLabel = document.getElementById('password-required-label');
+      if (selectedProduct.needsPassword) {
+        passInput.required = true;
+        passLabel.textContent = '(Wajib untuk Joki)';
+        passLabel.className = 'text-amber-400';
+      } else {
+        passInput.required = false;
+        passLabel.textContent = '(Opsional — Tidak wajib untuk Akun/Trade)';
+        passLabel.className = 'text-emerald-400';
+      }
+
+      const modal = document.getElementById('checkout-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeCheckoutModal() {
+      const modal = document.getElementById('checkout-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      clearInterval(paymentCountdownInterval);
+    }
+
+    function togglePasswordVisibility() {
+      const input = document.getElementById('input-roblox-pass');
+      input.type = input.type === 'password' ? 'text' : 'password';
+    }
+
+    function proceedToQris(event) {
+      event.preventDefault();
+      const robloxUser = document.getElementById('input-roblox-user').value.trim();
+      const whatsapp = document.getElementById('input-whatsapp').value.trim();
+      const robloxPass = document.getElementById('input-roblox-pass').value;
+      const notes = document.getElementById('input-notes').value.trim();
+
+      if (!robloxUser || !whatsapp) {
+        showToast('Mohon lengkapi Username Roblox dan Nomor WhatsApp!', 'error');
+        return;
+      }
+
+      pendingOrderDraft = {
+        product: selectedProduct,
+        robloxUser: robloxUser,
+        whatsapp: whatsapp,
+        robloxPass: robloxPass ? 'Tersimpan Aman' : 'Tidak diperlukan',
+        notes: notes || '-',
+      };
+
+      document.getElementById('order-form').classList.add('hidden');
+      document.getElementById('qris-payment-step').classList.remove('hidden');
+      document.getElementById('modal-step-badge').textContent = 'Step 2 dari 2 • Pembayaran QRIS Dinamis Dlissz';
+      document.getElementById('modal-product-title').textContent = 'Scan & Bayar via QRIS';
+
+      // Render QRIS Dinamis sesuai harga produk
+      updateQrisVisuals(selectedProduct.price);
+
+      document.getElementById('qris-summary-product').textContent = selectedProduct.title;
+      document.getElementById('qris-summary-user').textContent = '@' + robloxUser;
+      document.getElementById('qris-summary-total').textContent = formatRupiah(selectedProduct.price);
+
+      startPaymentTimer(15 * 60);
+    }
+
+    function backToOrderForm() {
+      document.getElementById('qris-payment-step').classList.add('hidden');
+      document.getElementById('order-form').classList.remove('hidden');
+      document.getElementById('modal-step-badge').textContent = 'Step 1 dari 2 • Data Akun Roblox';
+      document.getElementById('modal-product-title').textContent = 'Form Pemesanan';
+      clearInterval(paymentCountdownInterval);
+    }
+
+    function startPaymentTimer(durationSeconds) {
+      clearInterval(paymentCountdownInterval);
+      let remaining = durationSeconds;
+      const timerEl = document.getElementById('payment-timer');
+
+      function tick() {
+        const mins = Math.floor(remaining / 60);
+        const secs = remaining % 60;
+        timerEl.textContent = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+        if (remaining <= 0) clearInterval(paymentCountdownInterval);
+        remaining--;
+      }
+      tick();
+      paymentCountdownInterval = setInterval(tick, 1000);
+    }
+
+    function handleProofUpload(event) {
+      const file = event.target.files[0];
+      const label = document.getElementById('proof-file-name');
+      if (file) {
+        uploadedProofName = file.name;
+        label.textContent = 'File bukti terlampir: ' + file.name;
+        label.classList.remove('hidden');
+      } else {
+        uploadedProofName = '';
+        label.classList.add('hidden');
+      }
+    }
+
+    function openZoomQris() {
+      const m = document.getElementById('zoom-qris-modal');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+
+    function closeZoomQris() {
+      const m = document.getElementById('zoom-qris-modal');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+
+    // 9. SIMPAN PESANAN, INVOICE & PELACAKAN STATUS
+    function getOrders() {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY_ORDERS)) || [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveOrders(orders) {
+      try {
+        localStorage.setItem(STORAGE_KEY_ORDERS, JSON.stringify(orders));
+      } catch (e) {}
+      updateHeaderBadge();
+      renderOrderHistory();
+    }
+
+    function generateInvoiceId() {
+      const rand = Math.floor(1000 + Math.random() * 9000);
+      return 'DLS-2026' + rand;
+    }
+
+    function confirmPayment() {
+      const senderName = document.getElementById('input-sender-name').value.trim();
+      if (!senderName) {
+        showToast('Masukkan Nama Pengirim / E-Wallet terlebih dahulu!', 'error');
+        document.getElementById('input-sender-name').focus();
+        return;
+      }
+
+      const invoiceId = generateInvoiceId();
+      const newOrder = {
+        invoiceId: invoiceId,
+        createdAt: new Date().toISOString(),
+        game: pendingOrderDraft.product.gameName,
+        category: pendingOrderDraft.product.categoryLabel,
+        productTitle: pendingOrderDraft.product.title,
+        price: pendingOrderDraft.product.price,
+        est: pendingOrderDraft.product.est,
+        robloxUser: pendingOrderDraft.robloxUser,
+        whatsapp: pendingOrderDraft.whatsapp,
+        notes: pendingOrderDraft.notes,
+        senderName: senderName,
+        proofFile: uploadedProofName || 'Konfirmasi QRIS Dlissz',
+        statusStep: 1,
+      };
+
+      const orders = getOrders();
+      orders.unshift(newOrder);
+      saveOrders(orders);
+
+      document.getElementById('order-form').reset();
+      document.getElementById('input-sender-name').value = '';
+      document.getElementById('input-proof-file').value = '';
+      document.getElementById('proof-file-name').classList.add('hidden');
+      uploadedProofName = '';
+
+      closeCheckoutModal();
+      showToast('Pesanan ' + invoiceId + ' berhasil dibuat!', 'success');
+
+      openInvoiceModal(invoiceId);
+      displayTrackedOrder(invoiceId, false);
+    }
+
+    const STATUS_STEPS = [
+      {
+        step: 1,
+        title: 'Menunggu Verifikasi Pembayaran',
+        desc: 'Admin sedang mengecek mutasi QRIS Dlissz dari pengirim.',
+      },
+      {
+        step: 2,
+        title: 'Pembayaran Diterima',
+        desc: 'Pembayaran QRIS valid! Pesanan masuk antrean prioritas.',
+      },
+      {
+        step: 3,
+        title: 'Sedang Diproses (Pengerjaan Joki / Pengiriman)',
+        desc: 'Tim Pro Player Dlissz sedang memproses akun/item kamu.',
+      },
+      {
+        step: 4,
+        title: 'Selesai',
+        desc: 'Pesanan telah selesai dikerjakan! Silakan cek akun Roblox kamu.',
+      },
+    ];
+
+    function buildOrderTrackerHTML(order, isInsideModal) {
+      const currentStep = order.statusStep || 1;
+      const waMessage = encodeURIComponent(
+        'Halo Admin Dlissz Store! Saya ingin konfirmasi pesanan:\n' +
+        '• Invoice: ' + order.invoiceId + '\n' +
+        '• Game: ' + order.game + ' (' + order.category + ')\n' +
+        '• Layanan: ' + order.productTitle + '\n' +
+        '• Username Roblox: ' + order.robloxUser + '\n' +
+        '• Total: ' + formatRupiah(order.price) + '\n' +
+        '• Pengirim QRIS: ' + order.senderName + '\n' +
+        'Mohon diproses ya min, terima kasih!'
+      );
+
+      const stepsHtml = STATUS_STEPS.map(function (st) {
+        const isDone = st.step < currentStep;
+        const isCurrent = st.step === currentStep;
+        const cardClass = isCurrent
+          ? 'bg-gradient-to-r from-indigo-950/95 to-cyan-950/60 border-cyan-400/60 shadow-md'
+          : isDone
+          ? 'bg-emerald-950/30 border-emerald-500/35'
+          : 'bg-[#060913]/60 border-[#232d52]/70 opacity-60';
+        const dotClass = isCurrent
+          ? 'bg-cyan-400 text-slate-950 font-extrabold'
+          : isDone
+          ? 'bg-emerald-500 text-slate-950 font-extrabold'
+          : 'bg-[#151c36] text-slate-400 font-bold';
+        const badge = isCurrent
+          ? '<span class="px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 text-[10px] font-bold">Aktif</span>'
+          : isDone
+          ? '<span class="text-[10px] font-bold text-emerald-400">Selesai</span>'
+          : '';
+
+        return (
+          '<div class="flex items-start gap-3.5 p-3.5 rounded-2xl border ' + cardClass + '">' +
+            '<div class="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 text-xs ' + dotClass + '">' +
+              (isDone ? '✓' : st.step) +
+            '</div>' +
+            '<div class="flex-1">' +
+              '<div class="flex items-center justify-between gap-2">' +
+                '<p class="text-xs sm:text-sm font-bold text-white">' + st.step + '. ' + st.title + '</p>' +
+                badge +
+              '</div>' +
+              '<p class="text-xs text-slate-400 mt-0.5">' + st.desc + '</p>' +
+            '</div>' +
+          '</div>'
+        );
+      }).join('');
+
+      return (
+        '<div class="space-y-5">' +
+          '<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-[#060913] border border-[#232d52]">' +
+            '<div>' +
+              '<span class="text-[11px] uppercase tracking-wider text-slate-400 block">Kode Invoice / Order ID</span>' +
+              '<div class="flex items-center gap-2 mt-0.5">' +
+                '<span class="font-display text-lg sm:text-xl font-extrabold text-cyan-400">' + order.invoiceId + '</span>' +
+                '<button type="button" onclick="copyInvoiceCode(\'' + order.invoiceId + '\')" class="px-2.5 py-1 rounded-lg bg-[#151c36] hover:bg-indigo-600/30 text-xs font-bold text-slate-200">Salin</button>' +
+              '</div>' +
+              '<span class="text-[11px] text-slate-500">' + formatDateTime(order.createdAt) + '</span>' +
+            '</div>' +
+            '<button type="button" onclick="simulateRefreshOrderStatus(\'' + order.invoiceId + '\', ' + Boolean(isInsideModal) + ')" class="px-4 py-2.5 rounded-xl bg-indigo-600/25 hover:bg-indigo-600/40 border border-indigo-500/40 text-indigo-300 text-xs font-bold">' +
+              'Refresh Status' +
+            '</button>' +
+          '</div>' +
+
+          '<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-4 rounded-2xl bg-[#151c36]/60 border border-[#232d52] text-xs">' +
+            '<div><span class="text-slate-400 block">Game / Kategori</span><strong class="text-white">' + order.game + ' • ' + order.category + '</strong></div>' +
+            '<div><span class="text-slate-400 block">Layanan</span><strong class="text-cyan-300">' + order.productTitle + '</strong></div>' +
+            '<div><span class="text-slate-400 block">Username Roblox</span><strong class="text-white">@' + order.robloxUser + '</strong></div>' +
+            '<div><span class="text-slate-400 block">Total QRIS</span><strong class="text-emerald-400">' + formatRupiah(order.price) + '</strong></div>' +
+          '</div>' +
+
+          '<div class="space-y-3">' +
+            '<div class="flex items-center justify-between">' +
+              '<h4 class="text-xs font-bold uppercase tracking-wider text-slate-300">Progres Pengerjaan</h4>' +
+              '<span class="text-xs font-bold text-cyan-400">Tahap ' + currentStep + ' dari 4</span>' +
+            '</div>' +
+            '<div class="space-y-2.5">' + stepsHtml + '</div>' +
+          '</div>' +
+
+          '<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">' +
+            '<button type="button" onclick="openAdminChat(\'' + order.invoiceId + '\')" class="py-3 px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-xs sm:text-sm shadow-lg">' +
+              'Live Chat Admin di Web' +
+            '</button>' +
+            '<a href="https://wa.me/' + ADMIN_WA_NUMBER + '?text=' + waMessage + '" target="_blank" rel="noopener noreferrer" class="py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm text-center shadow-lg">' +
+              'Chat Admin via WhatsApp' +
+            '</a>' +
+          '</div>' +
+        '</div>'
+      );
+    }
+
+    function openInvoiceModal(invoiceId) {
+      const order = getOrders().find(function (o) { return o.invoiceId === invoiceId; });
+      if (!order) return;
+      activeTrackedOrderId = invoiceId;
+      document.getElementById('invoice-modal-content').innerHTML = buildOrderTrackerHTML(order, true);
+      const modal = document.getElementById('invoice-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeInvoiceModal() {
+      const modal = document.getElementById('invoice-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function simulateRefreshOrderStatus(invoiceId, isInsideModal) {
+      const orders = getOrders();
+      const idx = orders.findIndex(function (o) { return o.invoiceId === invoiceId; });
+      if (idx === -1) return;
+
+      if (orders[idx].statusStep < 4) {
+        orders[idx].statusStep += 1;
+        saveOrders(orders);
+        showToast('Status diperbarui: ' + STATUS_STEPS[orders[idx].statusStep - 1].title, 'success');
+      } else {
+        showToast('Pesanan ini sudah berstatus Selesai!', 'info');
+      }
+
+      if (isInsideModal) {
+        document.getElementById('invoice-modal-content').innerHTML = buildOrderTrackerHTML(orders[idx], true);
+      }
+      displayTrackedOrder(invoiceId, false);
+    }
+
+    function handleSearchOrder(event) {
+      event.preventDefault();
+      const val = document.getElementById('track-order-input').value.trim().toUpperCase();
+      if (val) displayTrackedOrder(val, true);
+    }
+
+    function displayTrackedOrder(invoiceId, notifyIfNotFound) {
+      const order = getOrders().find(function (o) {
+        return o.invoiceId.toUpperCase() === invoiceId.toUpperCase();
+      });
+      const container = document.getElementById('tracked-order-result');
+
+      if (!order) {
+        if (notifyIfNotFound) {
+          showToast('Kode Invoice "' + invoiceId + '" tidak ditemukan.', 'error');
+        }
+        container.classList.add('hidden');
+        return;
+      }
+
+      activeTrackedOrderId = order.invoiceId;
+      document.getElementById('track-order-input').value = order.invoiceId;
+      container.innerHTML = buildOrderTrackerHTML(order, false);
+      container.classList.remove('hidden');
+    }
+
+    function renderOrderHistory() {
+      const orders = getOrders();
+      const container = document.getElementById('order-history-list');
+      const countLabel = document.getElementById('history-count-label');
+      if (!container || !countLabel) return;
+
+      countLabel.textContent = orders.length + ' pesanan';
+
+      if (orders.length === 0) {
+        container.innerHTML =
+          '<div class="col-span-full p-6 rounded-2xl bg-[#0e1326]/70 border border-dashed border-[#232d52] text-center">' +
+          '<p class="text-xs sm:text-sm text-slate-400">Belum ada riwayat pesanan. Silakan pilih game &amp; paket joki di katalog atas!</p>' +
+          '</div>';
+        return;
+      }
+
+      container.innerHTML = orders
+        .map(function (ord) {
+          const st = STATUS_STEPS[(ord.statusStep || 1) - 1];
+          const badgeClass = ord.statusStep === 4
+            ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'
+            : 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40';
+          return (
+            '<div onclick="displayTrackedOrder(\'' + ord.invoiceId + '\', true)" class="cursor-pointer p-4 rounded-2xl bg-[#0e1326] hover:bg-[#151c36] border border-[#232d52] hover:border-cyan-400/60 transition-all flex items-center justify-between gap-3">' +
+              '<div class="min-w-0">' +
+                '<div class="flex items-center gap-2">' +
+                  '<span class="font-mono text-xs font-extrabold text-cyan-400">' + ord.invoiceId + '</span>' +
+                  '<span class="text-[10px] text-slate-500">• ' + ord.game + '</span>' +
+                '</div>' +
+                '<p class="text-sm font-bold text-white truncate mt-0.5">' + ord.productTitle + '</p>' +
+                '<p class="text-xs text-slate-400 mt-0.5">@' + ord.robloxUser + ' • ' + formatRupiah(ord.price) + '</p>' +
+              '</div>' +
+              '<div class="text-right shrink-0 space-y-1">' +
+                '<span class="inline-block px-2.5 py-1 rounded-full border text-[10px] font-bold ' + badgeClass + '">' + st.title.split(' ')[0] + '</span>' +
+                '<span class="block text-[11px] text-indigo-400 font-semibold">Detail &rarr;</span>' +
+              '</div>' +
+            '</div>'
+          );
+        })
+        .join('');
+    }
+
+    function updateHeaderBadge() {
+      const orders = getOrders();
+      const badge = document.getElementById('header-order-badge');
+      if (!badge) return;
+      if (orders.length > 0) {
+        badge.textContent = orders.length;
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+
+    function copyInvoiceCode(code) {
+      const temp = document.createElement('textarea');
+      temp.value = code;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand('copy');
+      document.body.removeChild(temp);
+      showToast('Kode Invoice ' + code + ' disalin!', 'success');
+    }
+
+    // 10. LIVE CHAT ADMIN
+    function getChatMessages() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY_CHAT));
+        if (saved && saved.length > 0) return saved;
+      } catch (e) {}
+      return [
+        {
+          sender: 'admin',
+          text: 'Halo kak! Selamat datang di Dlissz Store. Ada yang bisa mimin bantu seputar Akun, Fruit, Joki Race V4, Joki Level, atau konfirmasi QRIS?',
+          time: 'Online',
+        },
+      ];
+    }
+
+    function saveChatMessages(msgs) {
+      try {
+        localStorage.setItem(STORAGE_KEY_CHAT, JSON.stringify(msgs));
+      } catch (e) {}
+    }
+
+    function openAdminChat(invoiceId) {
+      const orders = getOrders();
+      const targetId = invoiceId || activeTrackedOrderId || (orders[0] && orders[0].invoiceId) || null;
+      const banner = document.getElementById('chat-order-banner');
+      const waBtn = document.getElementById('whatsapp-direct-btn');
+
+      if (targetId) {
+        activeTrackedOrderId = targetId;
+        const ord = orders.find(function (o) { return o.invoiceId === targetId; });
+        banner.classList.remove('hidden');
+        document.getElementById('chat-active-invoice').textContent = targetId;
+        if (ord) {
+          const waText = encodeURIComponent(
+            'Halo Admin Dlissz Store! Saya butuh bantuan terkait pesanan:\n' +
+            'Invoice: ' + ord.invoiceId + '\nGame: ' + ord.game + '\nLayanan: ' + ord.productTitle + '\nUsername Roblox: ' + ord.robloxUser
+          );
+          waBtn.href = 'https://wa.me/' + ADMIN_WA_NUMBER + '?text=' + waText;
+        }
+      } else {
+        banner.classList.add('hidden');
+        waBtn.href = 'https://wa.me/' + ADMIN_WA_NUMBER + '?text=' + encodeURIComponent('Halo Admin Dlissz Store! Saya mau tanya layanan joki/item Roblox.');
+      }
+
+      renderChatMessages();
+      const modal = document.getElementById('chat-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeAdminChat() {
+      const modal = document.getElementById('chat-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function renderChatMessages() {
+      const msgs = getChatMessages();
+      const box = document.getElementById('chat-messages-box');
+      if (!box) return;
+      box.innerHTML = msgs
+        .map(function (m) {
+          const isUser = m.sender === 'user';
+          return (
+            '<div class="flex flex-col ' + (isUser ? 'items-end' : 'items-start') + '">' +
+              '<div class="max-w-[82%] px-4 py-2.5 rounded-2xl text-xs sm:text-sm leading-relaxed whitespace-pre-line ' +
+                (isUser
+                  ? 'bg-gradient-to-r from-indigo-600 to-cyan-600 text-white rounded-br-sm'
+                  : 'bg-[#0e1326] border border-[#232d52] text-slate-200 rounded-bl-sm') +
+              '">' + m.text + '</div>' +
+              '<span class="text-[10px] text-slate-500 mt-1 px-1">' + (isUser ? 'Kamu' : 'Admin Dlissz') + ' • ' + m.time + '</span>' +
+            '</div>'
+          );
+        })
+        .join('');
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function appendMessageAndReply(userText) {
+      const msgs = getChatMessages();
+      const nowTime = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+      msgs.push({ sender: 'user', text: userText, time: nowTime });
+      saveChatMessages(msgs);
+      renderChatMessages();
+
+      setTimeout(function () {
+        const lower = userText.toLowerCase();
+        const activeOrd = getOrders().find(function (o) { return o.invoiceId === activeTrackedOrderId; });
+        let reply = '';
+
+        if (lower.indexOf('bayar') !== -1 || lower.indexOf('qris') !== -1 || lower.indexOf('cek') !== -1 || lower.indexOf('dls-') !== -1) {
+          reply = activeOrd
+            ? 'Siap kak! Pembayaran QRIS Dlissz untuk Invoice ' + activeOrd.invoiceId + ' (' + activeOrd.productTitle + ' - @' + activeOrd.robloxUser + ') sudah kami terima. Tim penjoki langsung memproses ya, estimasi ' + activeOrd.est + '!'
+            : 'Siap kak! Pembayaran QRIS atas nama merchant Dlissz langsung terdata. Sertakan Kode Invoice (DLS-2026XXXX) jika ingin mimin cek prioritas ya!';
+        } else if (lower.indexOf('estimasi') !== -1 || lower.indexOf('lama') !== -1) {
+          reply = activeOrd
+            ? 'Untuk layanan ' + activeOrd.productTitle + ' estimasi pengerjaannya sekitar ' + activeOrd.est + ' kak.'
+            : 'Rata-rata proses joki & pengiriman item kami 10 - 45 menit tergantung antrean & paketnya kak.';
+        } else if (lower.indexOf('akun') !== -1 || lower.indexOf('siap') !== -1) {
+          reply = 'Mantap kak! Tim penjoki Dlissz Store segera login ke akun Roblox kakak. Mohon jangan ditabrak login dulu selama status "Sedang Diproses" ya.';
+        } else {
+          reply = 'Terima kasih sudah menghubungi Dlissz Store! Pesan kakak sudah diterima admin. Untuk respon lebih cepat, kakak juga bisa klik tombol WhatsApp Admin di bawah ya.';
+        }
+
+        const updated = getChatMessages();
+        updated.push({
+          sender: 'admin',
+          text: reply,
+          time: new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }),
+        });
+        saveChatMessages(updated);
+        renderChatMessages();
+      }, 650);
+    }
+
+    function handleSendChat(event) {
+      event.preventDefault();
+      const input = document.getElementById('chat-input-field');
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = '';
+      appendMessageAndReply(text);
+    }
+
+    function sendQuickChat(text) {
+      appendMessageAndReply(text);
+    }
+
+    function sendOrderSummaryToChat() {
+      const ord = getOrders().find(function (o) { return o.invoiceId === activeTrackedOrderId; });
+      if (!ord) return;
+      appendMessageAndReply(
+        'Konfirmasi Pesanan:\n' +
+        'Invoice: ' + ord.invoiceId + '\n' +
+        'Game: ' + ord.game + ' (' + ord.category + ')\n' +
+        'Paket: ' + ord.productTitle + '\n' +
+        'Username: @' + ord.robloxUser + '\n' +
+        'Pengirim QRIS: ' + ord.senderName
+      );
+    }
+
+    // 11. JALANKAN RENDER LANGSUNG SAAT SCRIPT SELESAI DIMUAT
+    (function initStore() {
+      selectGame('bloxfruits', false);
+      updateQrisVisuals(0);
+      updateHeaderBadge();
+      renderOrderHistory();
+
+      const existingOrders = getOrders();
+      if (existingOrders.length > 0) {
+        displayTrackedOrder(existingOrders[0].invoiceId, false);
+      }
+    })();
+  </script>
+</body>
+</html>
